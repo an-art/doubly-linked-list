@@ -3,54 +3,65 @@ const Node = require('./node');
 class LinkedList {
     constructor() {
         this.length = 0;
-        this.head = null;
-        this.tail = null;
+        this._head = null;
+        this._tail = null;
     }
 
     append(data) {
-        if (this.tail != null) {            
-            this.tail.next = data;
-            data.prev = this.tail;
-            this.tail = data;
+       var newNode = new Node(data); 
+        if (this.length) {            
+            this._tail.next = newNode;
+            newNode.prev = this._tail;
+            this._tail = newNode;
         } else {
-            this.head = data;
-            this.tail = data;
+            this._head = newNode;
+            this._tail = newNode;
         } 
         this.length++;
     }
 
     head() {
-        return this.head.data;
+        return this._head.data;
     }
 
     tail() {
-        return this.tail.data;
+        return this._tail.data;
     }
 
     at(index) {
-        if (index = 0) {
-            return this.head();
-        } else if (index = this.length-1) {
-            return this.tail();
-        } else {
-            var i = 0;
-            while (i!=index) {
-                this == this.next;
-                i++;
-            }
-            return this;
+       var curNode = this._head;
+        var i = 0;
+        while (i != index) {
+            curNode = curNode.next;
+            i++;
         }
+        return curNode.data;
     }
 
     insertAt(index, data) {
+        var curNode = this._head;
+        var i = 0;
+        while (i != index) {
+            curNode = curNode.next;
+            i++;
+        }
+        curNode == curNode.next;
+        curNode.data = data;
+    }
+
+    isEmpty() {
+        if (this.length) {
+            return false;
+        } else return true;
+    }
+
+    clear() {
 
     }
 
-    isEmpty() {}
-
-    clear() {}
-
-    deleteAt(index) {}
+    deleteAt(index) {
+        
+    }
 
     reverse() {}
 
