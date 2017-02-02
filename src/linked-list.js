@@ -8,12 +8,12 @@ class LinkedList {
     }
 
     append(data) {
-        if (this.tail == null) {
-            this.head = data;
+        if (this.tail) {            
+            this.next = data;
+            //data.prev = this.tail;
             this.tail = data;
         } else {
-            this.tail.next = data;
-            data.prev = this.tail;
+            this.head = data;
             this.tail = data;
         } 
         this.length++;
