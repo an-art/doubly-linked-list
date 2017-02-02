@@ -8,16 +8,14 @@ class LinkedList {
     }
 
     append(data) {
-        if (this.length){
+        if (this.head = this.tail) {
+            this.head = data;
+            this.tail = data;
+        } else {
             this.tail.next = data;
             data.prev = this.tail;
             this.tail = data;
-        } else {
-            this.head = data;
-            this.tail = data;
-        }
-        this.length++;
-        return data;
+        } 
     }
 
     head() {
