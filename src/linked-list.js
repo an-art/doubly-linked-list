@@ -60,7 +60,20 @@ class LinkedList {
     }
 
     deleteAt(index) {
-        
+        var curNode = this._head;
+        var i = 0;
+        while (i != index) {
+            curNode = curNode.next;
+            i++;
+        }
+        if (curNode.prev!=null && curNode.next!=null) {
+            curNode.prev.next = curNode.next;
+            curNode.next.prev = curNode.prev;
+        } else if (curNode.prev!=null) {
+            curNode._tail = curNode.prev;
+            curNode.next = null;
+        } else curNode._head = curNode.next;
+        curNode.length--;
     }
 
     reverse() {}
