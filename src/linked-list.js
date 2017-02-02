@@ -8,7 +8,7 @@ class LinkedList {
     }
 
     append(data) {
-        if (this.tail) {            
+        if (this.tail != null) {            
             this.next = data;
             //data.prev = this.tail;
             this.tail = data;
