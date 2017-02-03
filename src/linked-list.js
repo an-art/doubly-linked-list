@@ -83,7 +83,21 @@ class LinkedList {
     }
 
     reverse() {
-
+        var curNode = this._tail;
+        var newNode = this._head;
+        var i = this.length/2;
+        var data;
+        if (this.length<2) {
+            newNode = curNode;
+        } else {
+        while (i!=0) {
+            data = newNode.data;
+            newNode.data = curNode.data;
+            curNode.data = data;
+            newNode = newNode.next;
+            curNode = curNode.prev;
+            i--;
+        }}
     }
 
     indexOf(data) {
