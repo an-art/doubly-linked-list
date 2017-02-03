@@ -56,7 +56,10 @@ class LinkedList {
     }
 
     clear() {
-
+        for (var i = this.length; i!=0; i--) {
+            this._tail = null;
+            this._tail.prev == this._tail;
+        }
     }
 
     deleteAt(index) {
