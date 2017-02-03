@@ -56,10 +56,13 @@ class LinkedList {
     }
 
     clear() {
-        for (var i = this.length; i!=0; i--) {
-            this._tail = null;
-            this._tail.prev == this._tail;
-        }
+        /*var curNode = this._head;
+        while (curNode!=null)
+    {            
+            curNode = curNode.next;
+            curNode.prev = null;
+            this.length--;
+        }*/
     }
 
     deleteAt(index) {
@@ -79,9 +82,20 @@ class LinkedList {
         curNode.length--;
     }
 
-    reverse() {}
+    reverse() {
 
-    indexOf(data) {}
+    }
+
+    indexOf(data) {
+        var curNode = this._head;
+        var i = 0;
+        while (curNode!=null && curNode.data != data) {
+            curNode = curNode.next;
+            i++;
+        } 
+        if (curNode != null) {
+            return i;
+        } else return -1;
+    }
 }
-
 module.exports = LinkedList;
