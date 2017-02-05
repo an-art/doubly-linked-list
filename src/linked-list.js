@@ -56,13 +56,13 @@ class LinkedList {
     }
 
     clear() {
-        /*var curNode = this._head;
+        var curNode = this._head;
         while (curNode!=null)
     {            
+            curNode.data = null;
             curNode = curNode.next;
-            curNode.prev = null;
             this.length--;
-        }*/
+        }
     }
 
     deleteAt(index) {
