@@ -91,6 +91,8 @@ class LinkedList {
         var newNode = this._head;
         var i = this.length/2;
         var data;
+        if (curNode === newNode) return this;
+        else {
         while (i!=0) {
             data = newNode.data;
             newNode.data = curNode.data;
@@ -100,6 +102,7 @@ class LinkedList {
             i--;
         }
         return this;
+    }
     }
 
     indexOf(data) {
